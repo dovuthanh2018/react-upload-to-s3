@@ -530,7 +530,7 @@ export const UploadToS3 = (props) => {
         refInputImage.current.click();
       }
 
-    } else if(type === Constants.TYPE_PDF) {
+    } else if(type === Constants.TYPE_PDF || type === Constants.TYPE_AUDIO) {
 
       if(flow === Config.FLOW_INIT) {
         refInputPdf.current.click();
@@ -569,7 +569,7 @@ export const UploadToS3 = (props) => {
         reader.readAsDataURL(file);
       }
 
-    } else if(type === Constants.TYPE_PDF) {
+    } else if(type === Constants.TYPE_PDF || type === Constants.TYPE_AUDIO) {
 
       const [file] = refInputPdf.current.files
       if(file) {
@@ -1571,7 +1571,7 @@ export const UploadToS3 = (props) => {
         <Col sm={12} xs={12} md={12} xxl={12} className={`d-flex flex-wrap align-items-center px-3 text-muted`} >
           <CloudArrowUp className='me-3 ms-2' style={{visibility: 'hidden'}}/>
           <div className='d-flex text-small justify-content-start pt-3'>
-            <input ref={refInputPdf} type="file" accept="application/pdf" onChange={onFileSelectionChanged}  />
+            <input ref={refInputPdf} type="file" accept={type === Constants.TYPE_AUDIO ? "audio/*" : "application/pdf" } onChange={onFileSelectionChanged}  />
           </div>
         </Col>
       </Row>

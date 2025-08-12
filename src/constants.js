@@ -3,6 +3,7 @@ const Constants = {
     TYPE_IMAGE: "image",
     TYPE_PDF: 'pdf',
     TYPE_VIDEO: 'video',
+    TYPE_AUDIO: 'audio',
 
     JOB_STATUS_SUBMITTED: "SUBMITTED",
     JOB_STATUS_COMPLETE: "COMPLETE",
